@@ -29,13 +29,14 @@ In addition, CMake automatically downloads all the OpenPose models. However, **s
     - Ubuntu 18: **Download and compile CMake-gui from source**. The default CMake-gui version (3.10) installed via `sudo apt-get install cmake-qt-gui` provokes some compiling errors. Required CMake version >= 3.12.
         - Uninstall your current Cmake-gui version by running `sudo apt purge cmake-qt-gui`.
         - Run `sudo apt-get install qtbase5-dev`.
+        - Change to a directory beneath which where you want cmake sources to reside
         - Download the `Latest Release` of `CMake Unix/Linux Source` from the [CMake download website](https://cmake.org/download/), called `cmake-X.X.X.tar.gz`.
         - Unzip it and go inside that folder from the terminal.
         - Run `./configure --qt-gui`. Make sure no error occurred.
-        - Run `./bootstrap && make -j8 && make install -j8`. Make sure no error occurred.
-        - Assuming your CMake downloaded folder is in {CMAKE_FOLDER_PATH}, everytime these instructions mentions `cmake-gui`, you will have to replace that line by `{CMAKE_FOLDER_PATH}/bin/cmake-gui`.
+        - Run `./bootstrap && make -j8`
+        - Run `sudo make install -j8`. Make sure no error occurred.
 3. Nvidia GPU version prerequisites:
-    1. **Note: OpenPose has been tested extensively with CUDA 8.0 (cuDNN 5.1) and CUDA 10.0 (cuDNN 7.5)**. We highly recommend using those versions to minimize potential installation issues. Other versions should also work, but we do not provide support about any CUDA/cuDNN installation/compilation issue, as well as problems relate dto their integration into OpenPose.
+    1. **Note: OpenPose has been tested extensively with CUDA 8.0 (cuDNN 5.1) and CUDA 10.0 (cuDNN 7.5)**. We highly recommend using those versions to minimize potential installation issues. Other versions should also work, but we do not provide support about any CUDA/cuDNN installation/compilation issue, as well as problems relate dto their integration into OpenPose. 
     2. **CUDA**:
         - Ubuntu 14 or 16 ([**CUDA 8**](https://developer.nvidia.com/cuda-80-ga2-download-archive) **or 10**): Run `sudo ./scripts/ubuntu/install_cuda.sh` (if Ubuntu 16 or 14 and for Graphic cards up to 10XX) or alternatively download and install it from their website.
         - Ubuntu 18 ([**CUDA 10**](https://developer.nvidia.com/cuda-downloads)): Download the latest Nvidia CUDA version from their [official website](https://developer.nvidia.com/cuda-downloads).
